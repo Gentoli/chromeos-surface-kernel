@@ -21,7 +21,8 @@
 
 // define C_ASSERT macro to check structure size and fail compile for unexpected mismatch
 #ifndef C_ASSERT
-#define C_ASSERT(e) typedef char __C_ASSERT__[(e)?1:-1]
+#define C_ASSERT(e) 
+//typedef char __C_ASSERT__[(e)?1:-1]
 #endif
 
 //

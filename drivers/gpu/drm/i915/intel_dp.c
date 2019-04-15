@@ -2773,20 +2773,20 @@ static void ironlake_edp_pll_off(struct intel_dp *intel_dp,
 	udelay(200);
 }
 
-static bool downstream_hpd_needs_d0(struct intel_dp *intel_dp)
-{
-	/*
-	 * DPCD 1.2+ should support BRANCH_DEVICE_CTRL, and thus
-	 * be capable of signalling downstream hpd with a long pulse.
-	 * Whether or not that means D3 is safe to use is not clear,
-	 * but let's assume so until proven otherwise.
-	 *
-	 * FIXME should really check all downstream ports...
-	 */
-	return intel_dp->dpcd[DP_DPCD_REV] == 0x11 &&
-		intel_dp->dpcd[DP_DOWNSTREAMPORT_PRESENT] & DP_DWN_STRM_PORT_PRESENT &&
-		intel_dp->downstream_ports[0] & DP_DS_PORT_HPD;
-}
+// static bool downstream_hpd_needs_d0(struct intel_dp *intel_dp)
+// {
+// 	/*
+// 	 * DPCD 1.2+ should support BRANCH_DEVICE_CTRL, and thus
+// 	 * be capable of signalling downstream hpd with a long pulse.
+// 	 * Whether or not that means D3 is safe to use is not clear,
+// 	 * but let's assume so until proven otherwise.
+// 	 *
+// 	 * FIXME should really check all downstream ports...
+// 	 */
+// 	return intel_dp->dpcd[DP_DPCD_REV] == 0x11 &&
+// 		intel_dp->dpcd[DP_DOWNSTREAMPORT_PRESENT] & DP_DWN_STRM_PORT_PRESENT &&
+// 		intel_dp->downstream_ports[0] & DP_DS_PORT_HPD;
+// }
 
 /* If the sink supports it, try to set the power state appropriately */
 void intel_dp_sink_dpms(struct intel_dp *intel_dp, int mode)
